@@ -3,13 +3,14 @@
 # Thortful Front End Challenge
 
 
-Show us what you can do with Angular! 
+Show us what you can do! 
 
 We'd like you to write a small app with the following requirements:
 
+* Use Angular or React
 * Use a RESTFul API. 
 * Good looking UI 
-* At least one User interaction (e.g. search) 
+* Be creative with the functionality on the page
 * Create a readme file explaining how to build / run your app.
 
 On the API side, the choice is yours, from the Star wars API (https://swapi.co), Github(https://developer.github.com/v3/search/#search-issues), (Random User API (https://randomuser.me), .....
@@ -19,6 +20,7 @@ Few notes on the app:
 * UI : You can use Bootstrap, Material, ... Or build something from scratch. 
 * Use best practices in writing JavaScript / Typescript, CSS, and HTML.
 * Write clearly and use a proper structure to write the application.
+* Demonstrate you have tested that the app works how you want it to.
 
 We could be sneaky and not say anything else, but here's some things we're looking to see:
 
@@ -33,4 +35,4 @@ You can just submit a PR here, create a private repo, or just send us the repo b
 
 ---
 
-[@thortful](https://www.thortful.com) - 2020
+[@thortful](https://www.thortful.com) - 2022
