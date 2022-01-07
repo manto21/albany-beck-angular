@@ -10,7 +10,7 @@ We'd like you to write a small app with the following requirements:
 * Use Angular or React
 * Use a RESTFul API. 
 * Good looking UI 
-* Does something cool
+* Be creative with the functionality on the page
 * Create a readme file explaining how to build / run your app.
 
 On the API side, the choice is yours, from the Star wars API (https://swapi.co), Github(https://developer.github.com/v3/search/#search-issues), (Random User API (https://randomuser.me), .....
