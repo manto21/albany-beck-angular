@@ -1,0 +1,25 @@
+<div class="countries">
+    <label class="label">Country</label>
+    <select (change)="selectedOption($event)" [disabled]="selectedRegion.length == 0">
+        <option [selected]=""></option>
+        <option *ngFor="let countries of selectedRegion" [value]="countries.name">{{countries.name}}</option>
+    </select>
+    <table>
+        <thead>
+            <th>Name</th>
+            <th>Capital</th>
+            <th>Population</th>
+            <th>Currencies</th>
+            <th>Flag</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let country of selectedCountry">
+                <td>{{country.name}}</td>
+                <td>{{country.capital}}</td>
+                <td>{{country.population}}</td>
+                <td>{{country.currencies[0].name}}</td>
+                <td><img style="width: 40px; height: 40px;" src="{{country.flag}}"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
