@@ -7,6 +7,7 @@ import { DbService } from './app-data/db.service';
 import { AppComponent } from './app.component';
 import { CountriesComponent } from './countries/countries.component';
 import { RegionsComponent } from './region/regions.component';
+import { CommonComponent } from './common-component/common.component';
 import { StoreModule } from '@ngrx/store';
 import { regionReducer } from './store/region.reducer';
 
@@ -21,6 +22,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
+    CommonComponent,
     RegionsComponent,
     CountriesComponent
   ],

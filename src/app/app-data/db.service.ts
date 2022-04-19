@@ -8,6 +8,7 @@ import { AppData } from './app-data.interface';
 })
 export class DbService {
   selectedRegion = new Subject<any>();
+  selectedCountry = new Subject<any>();
 
   constructor(private httpClient: HttpClient) {}
 

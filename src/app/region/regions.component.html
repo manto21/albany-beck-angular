@@ -1,7 +1,3 @@
-<div class="regions">
-    <label class="label">Region</label>
-    <select (change)="selectedOption($event)">
-        <option [selected]=""></option>
-        <option *ngFor="let region of regionList" [value]="region.value">{{region.name}}</option>
-    </select>
+<div class="dropdown-options">
+    <app-common-component [label]="label" [dropdownOptions]="regionList"></app-common-component>
 </div>

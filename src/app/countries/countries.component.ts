@@ -4,10 +4,11 @@ import { DbService } from '../app-data/db.service';
 @Component({
   selector: 'app-countries',
   templateUrl: './countries.component.html',
-  styles:['th, td {border: 1px solid;}'],
+  styleUrls: ['./../common-styles.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CountriesComponent implements OnInit {
+  label: string = "Country";
   selectedRegion: any = [];
   selectedCountry: any = [];
   
@@ -17,6 +18,10 @@ export class CountriesComponent implements OnInit {
     this.dbService.selectedRegion.asObservable().subscribe(data => {
       this.selectedRegion = data;
       this.selectedCountry = [];
+      this.changeDetection.detectChanges();
+    });
+    this.dbService.selectedCountry.asObservable().subscribe(data => {
+      this.selectedCountry = data;
       this.changeDetection.detectChanges();
     });
   }

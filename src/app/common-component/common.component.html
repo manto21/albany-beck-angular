@@ -1,0 +1,5 @@
+<label class="label">{{label}}</label>
+<select (change)="selectedOption($event)">
+    <option [selected]=""></option>
+    <option *ngFor="let option of dropdownOptions" [value]="option.value">{{option.name}}</option>
+</select>

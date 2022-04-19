@@ -1,0 +1,36 @@
+body {
+    font-family: monospace;
+    font-size: 16px;
+}
+
+.container {
+    margin: 20px auto;
+    max-width: 400px;
+}
+
+th, td {
+    border: 1px solid;
+}
+
+th {
+    background: antiquewhite;
+}
+
+td {
+    background: darkgrey;
+}
+
+.dropdown-options {
+    display: block;
+    margin: 10px 0;
+}
+
+label {
+    width: 20%;
+    display: inline-block;
+}
+
+select {
+    width: 80%;
+    display: inline-block;
+}
