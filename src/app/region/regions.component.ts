@@ -1,9 +1,11 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 // import { select } from '@ngrx/core';
 // import { Store } from '@ngrx/store';
 import { DbService } from '../app-data/db.service';
 import { AppState } from '../app.state';
 import { Region } from '../models/region.interface';
+import { addRegion } from '../store/region.actions';
 
 @Component({
   selector: 'app-regions',
@@ -11,21 +13,12 @@ import { Region } from '../models/region.interface';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RegionsComponent implements OnInit {
-  regionList: any = [
-    {name: "Europe", value:"europe"}, {name: "Asia", value: "asia"}];
-  regionsList: any = [];
+  regionList: any = [];
+  regionsList$: any = [];
+  count$: any;
   
-  constructor(private dbService: DbService) {
-    // this.regionsList = this.store.select(state => state.region);
-    // this.store.pipe(select('dataStore'), take(1)).subscribe((data) => {
-    //   this.regionsList = data;
-    //   });
-    // store.select('addRegionReducer')
-    //   .subscribe((data: Region) => {
-    //     if (typeof data != 'undefined') {
-    //     this.items$ = Observable.of(data.customObjects);
-    //     }
-    //   });
+  constructor(private dbService: DbService, private store: Store<{ region: Region[] }>,  private changeDetection: ChangeDetectorRef) {
+    this.regionsList$ = store.select('region');
   }
 
   ngOnInit() {
@@ -33,11 +26,11 @@ export class RegionsComponent implements OnInit {
   }
 
   addRegion() {
-    // let regions: Region[] = [{name: "Europe", value:"europe"}, {name: "Asia", value: "asia"}];
-    // this.store.dispatch({
-    //   type: "Region",
-    //   payload: regions
-    // });
+    this.store.dispatch(addRegion());
+    this.regionsList$.subscribe((response: any) => {
+      this.regionList = response;
+      this.changeDetection.detectChanges();
+    })
   }
 
   selectedOption(event: any) {

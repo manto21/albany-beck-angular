@@ -26,10 +26,7 @@ export class CountriesComponent implements OnInit {
       this.selectedCountry = this.selectedRegion.filter((element: any) => 
         element.name == event.target.value
       );
-    } else {
-      this.selectedCountry = []
     }
-    console.log('this.selectedCountry ', this.selectedCountry);
     this.changeDetection.detectChanges();    
   }
 }
