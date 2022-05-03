@@ -1,6 +1,6 @@
-![Barney](https://cloud.githubusercontent.com/assets/3603793/23482593/669e9444-feae-11e6-9b6b-d1a53faf984a.png)
+![Challenge Accepted](https://memegenerator.net/img/instances/48692669/challenge-accepted.jpg)
 
-# Thortful Front End Challenge
+# thortful Front End Challenge
 
 
 Show us what you can do! 
@@ -28,10 +28,13 @@ We could be sneaky and not say anything else, but here's some things we're looki
 * Code we can read
 * Something you'll be happy to go through with us during an interview
 
+### Alternatively,
+
+If you have recently worked on a relevant project that you're able to share then we'd be happy to accept this for submission.
 
 ### Submission notes
 
-Send us a link to a private repo containing your application and build/run instructions.
+Send us a link to a repo containing your application and build/run instructions.
 
 ---
 
