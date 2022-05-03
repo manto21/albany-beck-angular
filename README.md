@@ -31,7 +31,7 @@ We could be sneaky and not say anything else, but here's some things we're looki
 
 ### Submission notes
 
-You can just submit a PR here, create a private repo, or just send us the repo by email. Whatever you prefer.
+Send us a link to a private repo containing your application and build/run instructions.
 
 ---
 
