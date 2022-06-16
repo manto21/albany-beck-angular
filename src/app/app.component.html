@@ -1,0 +1,127 @@
+<div class="container">
+    <div class="user-details" *ngIf="userDetails">
+        <div class="row d-flex justify-content-center">
+            <div class="col col-lg-9 mb-4 mb-lg-0">
+                <div class="card" style="border-radius: .5rem;">
+                    <div class="row g-0">
+                        <div class="col-md-4 gradient-custom text-center text-white">
+                            <img src="{{userDetails?.results[0].picture.large}}" alt="avatar" class="img-fluid my-5"
+                                style="width: 128px;">
+                            <h5>{{userDetails?.results[0].name.title}} {{userDetails?.results[0].name.first}}
+                                {{userDetails?.results[0].name.last}}</h5>
+                            <br>
+                            <div class="col-12 mb-6">
+                                <h6>Email</h6>
+                                <p class="text-value">{{userDetails?.results[0].email}}</p>
+                            </div>
+                            <div class="col-12 mb-6">
+                                <h6>Phone</h6>
+                                <p class="text-value">{{userDetails?.results[0].phone}}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body p-4">
+                                <div class="wrapper">
+                                    <div class="header">
+                                        <h6>Personal Information</h6>
+                                        <span class="icons" (click)="openInfo()">
+                                            <svg *ngIf="!showInfo" xmlns="http://www.w3.org/2000/svg" width="16"
+                                                height="16" fill="currentColor" class="bi bi-arrow-down-circle"
+                                                viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd"
+                                                    d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z" />
+                                            </svg>
+                                            <svg *ngIf="showInfo" xmlns="http://www.w3.org/2000/svg" width="16"
+                                                height="16" fill="currentColor" class="bi bi-arrow-up-circle"
+                                                viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd"
+                                                    d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
+                                            </svg>
+                                        </span>
+                                    </div>
+                                    <hr class="mt-0 mb-4">
+                                    <input type="checkbox" id="state">
+                                    <div class="row pt-1" [ngClass]="{'showInfo': showInfo, '' : !showInfo}">
+                                        <div class="col-6 mb-3">
+                                            <h6>Age</h6>
+                                            <p class="text-value">{{userDetails?.results[0].dob.age}}</p>
+                                        </div>
+                                        <div class="col-6 mb-3">
+                                            <h6>Date of Birth</h6>
+                                            <p class="text-value">{{userDetails?.results[0].dob.date | date:
+                                                'dd/MM/yyyy'}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wrapper">
+                                    <div class="header">
+                                        <h6>Location</h6>
+                                        <span class="icons" (click)="openLocation()">
+                                            <svg *ngIf="!showLocation" xmlns="http://www.w3.org/2000/svg" width="16"
+                                                height="16" fill="currentColor" class="bi bi-arrow-down-circle"
+                                                viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd"
+                                                    d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z" />
+                                            </svg>
+                                            <svg *ngIf="showLocation" xmlns="http://www.w3.org/2000/svg" width="16"
+                                                height="16" fill="currentColor" class="bi bi-arrow-up-circle"
+                                                viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd"
+                                                    d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
+                                            </svg>
+                                        </span>
+                                    </div>
+                                    <hr class="mt-0 mb-4">
+                                    <input type="checkbox" id="state">
+                                    <div class="row pt-1"
+                                        [ngClass]="{'showLocation': showLocation, '' : !showLocation}">
+                                        <div class="col-6 mb-3">
+                                            <p class="text-value">{{userDetails?.results[0].location.street.number}}
+                                                {{userDetails?.results[0].location.street.name}}</p>
+                                            <p class="text-value">{{userDetails?.results[0].location.city}}</p>
+                                            <p class="text-value">{{userDetails?.results[0].location.state}}</p>
+                                            <p class="text-value">{{userDetails?.results[0].location.country}}</p>
+                                            <p class="text-value">{{userDetails?.results[0].location.postcode}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wrapper">
+                                    <div class="header">
+                                        <h6>Registration details</h6>
+                                        <span class="icons" (click)="openReg()">
+                                            <svg *ngIf="!showReg" xmlns="http://www.w3.org/2000/svg" width="16"
+                                                height="16" fill="currentColor" class="bi bi-arrow-down-circle"
+                                                viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd"
+                                                    d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z" />
+                                            </svg>
+                                            <svg *ngIf="showReg" xmlns="http://www.w3.org/2000/svg" width="16"
+                                                height="16" fill="currentColor" class="bi bi-arrow-up-circle"
+                                                viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd"
+                                                    d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
+                                            </svg>
+                                        </span>
+                                    </div>
+                                    <hr class="mt-0 mb-4">
+                                    <input type="checkbox" id="state">
+                                    <div class="row pt-1" [ngClass]="{'showReg': showReg, '' : !showReg}">
+                                        <div class="col-6 mb-3">
+                                            <h6>Age</h6>
+                                            <p class="text-value">{{userDetails?.results[0].registered.age}}</p>
+                                        </div>
+                                        <div class="col-6 mb-3">
+                                            <h6>Date</h6>
+                                            <p class="text-value">{{userDetails?.results[0].registered.date | date:
+                                                'dd/MM/yyyy'}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
